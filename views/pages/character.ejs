@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <% if (characters.length) { %>
+  <ul>
+    <% characters.forEach(function(character) { %>
+      <li>Name: <%= character.name %></li>
+      <li>Height: <%= character.height %></li>
+      <li>Mass: <%= character.mass %></li>
+      <li>Hair color: <%= character.hair_color %></li>
+      <li>Skin color: <%= character.skin_color %></li>
+      <li>Eye color: <%= character.eye_color %></li>
+      <li>Birth year: <%= character.birth_year %></li>
+      <li>Gender: <%= character.gender %></li>
+      <li>Homeworld: <%= character.homeworld %></li>
+      <li>Films:
+        <br><ul>
+          <% character.films.forEach(function(film) { %>
+          <li><%= film %></li>
+          <% }); %>
+        </ul>
+      </li>
+      <% if (character.species.length) { %>
+        <li>Species:
+          <br><ul>
+            <% character.species.forEach(function(species) { %>
+            <li><%= species %></li>
+            <% }); %>
+          </ul>
+        </li>
+      <% } %>
+      <% if (character.vehicles.length) { %>
+        <li>Vehicles:
+          <br><ul>
+            <% character.vehicles.forEach(function(vehicle) { %>
+            <li><%= vehicle %></li>
+            <% }); %>
+          </ul>
+        </li>
+      <% } %>
+      <% if (character.starships.length) { %>
+        <li>Starships:
+          <br><ul>
+            <% character.starships.forEach(function(starship) { %>
+            <li><%= starship %></li>
+            <% }); %>
+          </ul>
+        </li>
+      <% } %>
+    <% }); %>
+  </ul>
+  <% } else { %>
+  <p>No results</p>
+  <% } %>
+</body>
+</html>
